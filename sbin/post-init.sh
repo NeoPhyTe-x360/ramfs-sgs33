@@ -36,7 +36,6 @@ mount -t rootfs -o remount,ro rootfs
 echo "hydrxq" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 echo "1500000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 # echo "17" > /sys/devices/system/cpu/cpufreq/hydrxq/screen_off_min_step
-echo "30000" > /sys/devices/system/cpu/cpufreq/pegasusq/sampling_rate
 echo "110" > /proc/sys/vm/vfs_cache_pressure
 echo "40" > /proc/sys/vm/dirty_ratio
 echo "10" > /proc/sys/vm/dirty_background_ratio
@@ -253,7 +252,7 @@ echo "-15" > /proc/$(pgrep rngd)/oom_adj
    /sbin/ext/smoothsystem.sh &
    /sbin/busybox renice 19 `pidof smoothsystem.sh`
    /sbin/ext/undervolt.sh &
-   /sbin/ext/killing &
+   /sbin/ext/killing.sh &
 
 
 ##### EFS Backup #####
